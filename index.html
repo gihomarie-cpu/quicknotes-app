@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuickNotes is a calm, simple place to capture personal, work, and study notes.">
+    <title>QuickNotes — Keep the thought</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="QuickNotes home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>QuickNotes</span>
+        </a>
+        <p class="tagline">A small, steady place for the thoughts you do not want to lose.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-card capture-card" aria-labelledby="add-note-heading">
+        <div class="section-heading">
+          <p class="eyebrow">Capture</p>
+          <h1 id="add-note-heading">Keep the thought.</h1>
+          <p class="section-intro">Write it down now. Find it when you need it.</p>
+        </div>
+
+        <form id="note-form">
+          <div class="form-field note-field">
+            <label for="note-input">Your note</label>
+            <input
+              id="note-input"
+              name="note"
+              type="text"
+              maxlength="200"
+              autocomplete="off"
+              placeholder="What is on your mind?"
+            >
+          </div>
+
+          <div class="form-field category-field">
+            <label for="note-category">Category</label>
+            <select id="note-category" name="category">
+              <option value="Personal">Personal</option>
+              <option value="Work">Work</option>
+              <option value="Study">Study</option>
+            </select>
+          </div>
+
+          <button class="primary-button" type="submit">Add note</button>
+        </form>
+        <p id="error-message" class="error-message" role="alert" aria-live="polite"></p>
+      </section>
+
+      <section class="section-card notes-card" aria-labelledby="your-notes-heading">
+        <div class="notes-toolbar">
+          <div class="section-heading">
+            <p class="eyebrow">Collection</p>
+            <h2 id="your-notes-heading">Your notes</h2>
+          </div>
+          <button id="clear-all-button" class="text-button" type="button">Clear all</button>
+        </div>
+
+        <div class="search-field">
+          <label for="search-input">Search notes</label>
+          <input
+            id="search-input"
+            type="search"
+            autocomplete="off"
+            placeholder="Search by note text"
+          >
+        </div>
+
+        <p id="note-count" class="note-count" aria-live="polite">You have no notes yet.</p>
+        <ul id="notes-list" class="notes-list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>QuickNotes <span aria-hidden="true">·</span> Keep what matters close.</p>
+    </footer>
+  </body>
+</html>
