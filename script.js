@@ -34,7 +34,7 @@ function updateCount() {
   } else if (notes.length === 1) {
     noteCount.textContent = 'You have 1 note.';
   } else {
-    noteCount.textContent = 'You have ${notes.length} notes.';
+    noteCount.textContent = `You have ${notes.length} notes.`;
   }
 }
 
